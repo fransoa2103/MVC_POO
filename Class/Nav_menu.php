@@ -23,15 +23,13 @@
                         <ul class='navbar-nav'>
                             <?php
                                 for($i=0; $i<count($this->menu); $i++){
-                                    echo "<li class='nav-item'>";
                                     if($this->menu[$i][0] == $this->current_page){
-                                        echo "<a class='nav-link active' aria-current='page' href='".$this->menu[$i][0]."'>".$this->menu[$i][1]."</a>";
-
+                                        $class_text = "'nav-link active' aria-current='page'";
                                     }
                                     else {
-                                        
-                                        echo "<a class='nav-link' href='".$this->menu[$i][0]."'>".$this->menu[$i][1]."</a>";
+                                        $class_text = "'nav-link'";
                                     }
+                                    echo "<li class='nav-item'><a class=".$class_text." href='".$this->menu[$i][0]."'>".$this->menu[$i][1]."</a></li>";
                                 }
                             ?>
                         </ul>
