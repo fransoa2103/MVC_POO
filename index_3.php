@@ -1,9 +1,8 @@
 <?php
     require_once 'Model/autoload.php';
-    new NavMenu($_SERVER['PHP_SELF'],FilesName::$item_menu[0],'navbar-dark','bg-primary',
+    new NavMenu($_SERVER['PHP_SELF'],FilesName::$brand_logo,'navbar-dark','bg-primary',
     [
-        FilesName::$item_menu[1],
-        FilesName::$item_menu[2]
+        FilesName::$page_menu[0],
     ]);
 ?>
 

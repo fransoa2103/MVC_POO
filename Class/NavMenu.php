@@ -1,9 +1,9 @@
 <?php
-    require_once 'Files_name.php';
-    class Nav_menu extends Files_name {
+    require_once 'FilesName.php';
+    class NavMenu extends FilesName {
         public function __construct($current_page, $brand, $navbar_color = 'navbar-dark', $bg_color = 'bg-light', $menu ){
             $this->current_page = substr($current_page,9);
-            $this->brand        = $brand;
+            $this->brand        = $brand[0];
             $this->bg_color     = $bg_color;
             $this->navbar_color = $navbar_color;
             $this->menu         = $menu;
@@ -15,7 +15,7 @@
             ?>    
             <nav class='navbar navbar-expand-md <?= $this->navbar_color.' '.$this->bg_color ?>'>
                 <div class='container-fluid'>
-                    <img class='navbar-brand' src='<?= $this->brand ?>' width='50px' alt='fcb logo'>
+                    <img class='navbar-brand' src='<?= $this->brand ?>' width='50px' alt='FCB'>
                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                         <span class='navbar-toggler-icon'></span>
                     </button>
