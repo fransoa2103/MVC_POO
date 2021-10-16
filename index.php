@@ -1,10 +1,6 @@
 <?php
     require_once 'Model/autoload.php';
-    new NavMenu($_SERVER['PHP_SELF'],FilesName::$item_menu[0],'navbar-dark','bg-primary',
-    [
-        FilesName::$item_menu[1],
-        FilesName::$item_menu[2]
-    ]);
+    new NavMenu($_SERVER['PHP_SELF'],0,'navbar-dark','bg-primary',[1,1,1]);
 ?>
 
 <!DOCTYPE html>
