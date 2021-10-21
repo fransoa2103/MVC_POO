@@ -1,18 +1,15 @@
 <?php
-    session_start();
-    require 'Model\Class\ConnectDataBase.php';
-    $alias         = htmlspecialchars($_POST['alias']); 
+    $nick_name         = htmlspecialchars($_POST['nick_name']); 
     $password_1    = $_POST['password_1']; 
-    if ((isset($_POST) && !empty($alias)) && (!empty($password_1))){
-        $dataBase = ConnectDataBase::dbConnect();
-        $req = $dataBase->prepare('SELECT * FROM users WHERE alias = ?');
-        $req->execute([$alias]);
+    if ((isset($_POST) && !empty($nick_name)) && (!empty($password_1))){
+        $req = $dataBase->prepare('SELECT * FROM users WHERE nick_name = ?');
+        $req->execute([$nick_name]);
         $user = $req->fetch();
         if ($user){
             if (password_verify($password_1, $user['secretCode'])) {
                 $_SESSION['user'] = [
                     'id' => $user['id'],
-                    'alias' => $user['alias']
+                    'nick_name' => $user['nick_name']
                 ];
                 $_SESSION['logged'] = true;
             }
@@ -27,5 +24,5 @@
     else {
         $_SESSION['logged'] = false;
     }
-    header ('location: index.php');
+    header ('location: http://localhost/MVC_POO/?page=login');
     exit();

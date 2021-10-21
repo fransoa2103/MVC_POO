@@ -4,7 +4,7 @@
         <a class="navbar-brand">
             <?php
             if (isset($_SESSION['logged']) && $_SESSION['logged']){
-                echo "<p class='text-center rounded m-1 p-1 bg-light text-success'>Welcome</br>".$_SESSION['user']['alias']."</p>";
+                echo "<p class='text-center rounded m-1 p-1 bg-light text-success'>Welcome</br>".$_SESSION['user']['nick_name']."</p>";
             }
            ?>
         </a>
@@ -17,19 +17,19 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <!-- <a class="nav-link active" aria-current="page" href="http://localhost/MVC_POO/index.php">Home</a> -->
-                    <a class="nav-link" href="http://localhost/MVC_POO/index.php">Home</a>
+                    <a class="nav-link" href="http://localhost/MVC_POO/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/MVC_POO/new_register.php">Create a New account</a>
+                    <a class="nav-link" href="http://localhost/MVC_POO/?page=login">Log-in</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/MVC_POO/index.php">Log-in</a>
+                    <a class="nav-link" href="http://localhost/MVC_POO/?page=blog">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/MVC_POO/blog.php">Blog</a>
+                    <a class="nav-link" href="http://localhost/MVC_POO/?page=newAccount">Create a New account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/MVC_POO/logout.php">Log-out</a>
+                    <a class="nav-link" href="http://localhost/MVC_POO/?page=logout">Log-out</a>
                 </li>
             </ul>
         </div>
