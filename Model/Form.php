@@ -55,15 +55,15 @@ class Form {
     
     public static function formLogout(){?>
         <form action="http://localhost/MVC_POO/?page=logoutValid" method="POST">
-            <div>
+            <div class="m-1">
                 <input type="radio" id="yes" name="logoutYesOrNo" value="yes"> 
                 <label for="yes">YES</label>
             </div>
-            <div>
-                <input type="radio" id="no" name="logoutYesOrNo" value="no"d> 
-                <label for="yes">NO</label>
+            <div class="m-1">
+                <input type="radio" id="no" name="logoutYesOrNo" value="no"> 
+                <label for="no">NO</label>
             </div>
-            <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="submit" class="btn btn-warning text-dark" value="Submit">
         </form><?php
     }
 }

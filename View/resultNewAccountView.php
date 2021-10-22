@@ -2,7 +2,7 @@
     $title = "FCBlog";
     ob_start();
         if (isset($_SESSION['logged']) && $_SESSION['logged']) { 
-            echo "<span class='bg-warning p-1 rounded w-100 m-auto'>You're already login</span>";
+            echo "<span class='bg-warning text-dark p-1 rounded w-100 m-auto'>You're already login</span>";
         }
         else {
             if ($_SESSION['success'])

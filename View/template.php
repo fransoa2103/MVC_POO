@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,9 @@
     </head>
         
     <body class="bg-dark w-50 m-auto text-light">
-        <?php include 'navbar.php'; ?>
-        <?= $content ?>
+        <?php
+            include 'navbar.php';
+            echo $content;
+        ?>
     </body>
 </html>

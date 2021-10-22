@@ -2,7 +2,7 @@
     $title = "FCBlog";
     ob_start();
         if (isset($_SESSION['logged']) && $_SESSION['logged']){
-            echo "<p class='p-1 m-1 rounded bg-warning text-dark'>Confirm log-out</p>";
+            echo "<p class='w-25 p-1 m-1 rounded bg-info text-dark'>Confirm log-out</p>";
             Form::formLogout();
         }
         else {

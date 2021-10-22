@@ -17,7 +17,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <!-- <a class="nav-link active" aria-current="page" href="http://localhost/MVC_POO/index.php">Home</a> -->
-                    <a class="nav-link" href="http://localhost/MVC_POO/">Home</a>
+                    <a class="nav-link" href="http://localhost/MVC_POO/?page=home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost/MVC_POO/?page=login">Log-in</a>
