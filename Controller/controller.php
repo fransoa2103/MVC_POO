@@ -1,6 +1,5 @@
 <?php
-require_once 'Model\Form.php';
-
+use fcb\{UserManager, BlogManager};
 // ---------------------------------------------------------------------
 // CONTROLER INDEX HOME PAGE
 function home(){
@@ -13,7 +12,6 @@ function login(){
     require 'View\loginView.php';
 }
 function userExist(){
-    require 'Model\UserManager.php';
     $userManager = new UserManager();
     $req = $userManager->userExistModel();
 }
@@ -39,7 +37,6 @@ function newAccount(){
     }
 }
 function newAccountCtrl(){
-    require 'Model\UserManager.php';
     $newAccount = new UserManager();
     $req = $newAccount->createNewAccount();
     require 'View\resultNewAccountView.php';
@@ -48,7 +45,6 @@ function newAccountCtrl(){
 // ---------------------------------------------------------------------
 // CONTROLER BLOG MANAGER DISPLAY POSTS
 function blog(){
-    require 'Model\BlogManager.php';
     $blogManager = new BlogManager();
     $req = $blogManager->displayPosts();
     require 'View\blogView.php';

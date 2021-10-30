@@ -8,7 +8,7 @@
             if ($_SESSION['success'])
                 echo "<p class='bg-success p-1 rounded w-100 m-auto'>Congrats, your registration is confirmed! Now, log-in please!</p>";
             else {
-                echo "<span class='display-6 bg-danger p-1 rounded w-100 m-auto'>Error new register</span>";
+                echo "<span class='bg-danger p-1 rounded w-100 m-auto'>Error new register</span>";
             }
         }
     $content = ob_get_clean();

@@ -1,8 +1,8 @@
 <?php
-
+namespace fcb;
 class ConnectDataBase{
     protected function dbConnect() {
-        $dataBase = new PDO('mysql:host=localhost;dbname=fcblog;charset=utf8', 'root', '');
+        $dataBase = new \PDO('mysql:host=localhost;dbname=fcblog;charset=utf8', 'root', '');
         return $dataBase;
     }
 }

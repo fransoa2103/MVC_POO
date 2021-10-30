@@ -1,4 +1,5 @@
 <?php
+namespace fcb;
 class Form {
     // creation form avec les attributs:
     // action, [forLabel, textLabel, inputType, inputName, inputId]

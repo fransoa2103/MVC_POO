@@ -1,5 +1,8 @@
 <?php
+    require 'Model\Autoloader.php';
     session_start();
+    Autoloader::register();
+
     require ('Controller\controller.php') ;
     try {
         if (isset($_GET['page'])){
@@ -12,7 +15,8 @@
                 case "blog":        blog();         break;
                 case "newAccount":  newAccount();   break;
                 case "newAccountCtrl":  newAccountCtrl();   break;
-                default: throw new Exception ("file doesn't exist or unknow error");
+                default: home();
+                // default: throw new Exception ("file doesn't exist or unknow error");
             }
         }
         else {

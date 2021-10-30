@@ -1,4 +1,5 @@
 <?php
+    use fcb\Form;
     $title = "FCBlog";
     ob_start();
         if (isset($_SESSION['success']) && !$_SESSION['success']){

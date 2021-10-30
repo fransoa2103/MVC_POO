@@ -1,6 +1,6 @@
 <?php
+namespace fcb;
 require_once 'ConnectDataBase.php';
-
 class UserManager extends ConnectDataBase{
     // 
     // FUNCTION USER EXIST ?
@@ -52,6 +52,10 @@ class UserManager extends ConnectDataBase{
         }
         else {
             $_SESSION['success'] = false;
+            session_destroy();
         }
     }
+    // 
+    // END FUNCTION CREATE USER ?
+    // 
 }
