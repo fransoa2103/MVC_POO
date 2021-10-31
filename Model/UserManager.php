@@ -52,7 +52,6 @@ class UserManager extends ConnectDataBase{
         }
         else {
             $_SESSION['success'] = false;
-            session_destroy();
         }
     }
     // 
