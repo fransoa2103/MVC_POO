@@ -1,38 +1,43 @@
 <?php
 namespace fcb;
-require_once 'ConnectDataBase.php';
 class UserManager extends ConnectDataBase{
     // 
-    // FUNCTION USER EXIST ?
-    // 
-    function userExistModel(){
-        $dataBase      = $this->dbConnect();
-        $nick_name     = htmlspecialchars($_POST['nick_name']); 
-        $password_1    = $_POST['password_1']; 
-        if ((isset($_POST) && !empty($nick_name)) && (!empty($password_1))){
-            $req = $dataBase->prepare('SELECT * FROM users WHERE nick_name = ?');
-            $req->execute([$nick_name]);
-            $user = $req->fetch();
-            if (isset($user) && $user){
-                if (password_verify($password_1, $user['secretCode'])) {
-                    $_SESSION['user'] = [
-                        'id' => $user['id'],
-                        'nick_name' => $user['nick_name']
-                    ];
-                    $_SESSION['logged'] = true;
-                    header ('location: http://localhost/MVC_POO/?page=home');
-                    exit();
-                    return $req;
+    // function control user exist in database
+    //
+    function userExist(){
+        if (isset($_POST)){
+            FormInputControl::form_input_control($result = true);
+            if ($result && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+                $nick_name      = htmlspecialchars($_POST['nick_name']); 
+                $email          = htmlspecialchars($_POST['email']); 
+                $password_1     = $_POST['password_1']; 
+
+                $dataBase       = $this->dbConnect();
+                $req = $dataBase->prepare('SELECT * FROM users WHERE nick_name = ? AND email = ?');
+                $req->execute([$nick_name, $email]);
+                $user = $req->fetch();
+
+                if (isset($user) && $user){
+                    if (password_verify($password_1, $user['secretCode'])) {
+                        $_SESSION['user'] = [
+                            'id' => $user['id'],
+                            'nick_name' => $user['nick_name']
+                        ];
+                        $_SESSION['logged'] = true;
+                        $_SESSION['page'] = 'home';
+                    }
                 }
-            }
+            }       
         }
         $_SESSION['logged'] = false;
-        header ('location: http://localhost/MVC_POO/?page=login');
-        exit();
+        $_SESSION['page'] = 'login';
+
+
     }
     // 
-    // END FUNCTION USER EXIST?
-    // 
+    // FORM INPUT CONTROL
+    // control all inputs step by step and return boolean 
+    
     // ---------------------------------------------------------
     // 
     // FUNCTION CREATE USER

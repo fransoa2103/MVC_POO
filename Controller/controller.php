@@ -12,8 +12,13 @@ function login(){
     require 'View\loginView.php';
 }
 function userExist(){
+    $location_header = "";
     $userManager = new UserManager();
-    $req = $userManager->userExistModel();
+    $req = $userManager->userExist();
+    var_dump($_SESSION);
+    die;
+    header ('location: '.$_SESSION['page']);
+
 }
 function logout(){
     require 'View\logoutView.php';

@@ -13,6 +13,11 @@ class Form {
                 </label>
             </div>
             <div class="mb-3">
+                <label for="email" class="form-label">Email
+                    <input type="email" class="form-control" name="email" id="email">
+                </label>
+            </div>
+            <div class="mb-3">
                 <label for="password_1" class="form-label">Password
                     <input type="password" class="form-control" name="password_1" id="password_1">
                 </label>
